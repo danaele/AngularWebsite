@@ -1,0 +1,25 @@
+.header{
+    height: 200px;
+   
+}
+
+.name{
+    color: orangered;
+}
+
+.line{
+    border-style: none none solid;
+    border-color: orangered;
+}
+
+a {
+    color: #6F6F6F;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:#6F6F6F; 
+     text-decoration:none; 
+     cursor:pointer;  
+}

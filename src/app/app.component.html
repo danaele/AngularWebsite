@@ -1,3 +1,39 @@
-<h1>
-  {{title}}
-</h1>
+<mat-toolbar color="primary">
+  <a mat-mini-fab >
+  <mat-icon>home</mat-icon>
+  </a>
+
+  <span class="spacer"></span>
+  My app
+  <span class="spacer"></span>
+  <button mat-mini-fab color="secondary" [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>info</mat-icon>
+      <span>Infos</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>contact_phone</mat-icon>
+      <span>Contact</span>
+    </button>
+</mat-menu>
+
+<nav mat-tab-nav-bar>
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+          <mat-icon>{{link.icon}}</mat-icon>
+          &nbsp;
+          {{link.label}} 
+    </a>
+</nav>
+  
+<router-outlet></router-outlet>
+
+
